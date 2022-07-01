@@ -11,7 +11,7 @@ initrd /initramfs-linux.img
 options root=PARTUUID=71ec4afa-3461-4f9c-9f3e-becc45cbeafc intel_iommu=on pci_stub.ids=10de:13c2,10de:0fbb
 rw
 ```
-2. Add "intel_iommu=on" The ids will be done later.
+2. Add "intel_iommu=on" The ids will be added later.
 
 **Step Two: Locate GPU and GPU audio**
 
