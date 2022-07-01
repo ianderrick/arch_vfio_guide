@@ -4,10 +4,10 @@
 
 1. Go to /boot/loader/entries/arch.conf:
 ```
-title Arch Linux<br>
-linux /vmlinuz-linux<br>
-initrd /intel-ucode.img<br>
-initrd /initramfs-linux.img<br>
+title Arch Linux
+linux /vmlinuz-linux
+initrd /intel-ucode.img
+initrd /initramfs-linux.img
 options root=PARTUUID=71ec4afa-3461-4f9c-9f3e-becc45cbeafc intel_iommu=on pci_stub.ids=10de:13c2,10de:0fbb
 rw
 ```
@@ -17,20 +17,20 @@ rw
 
 1. Run command `lspci` whree you should see your GPU's video and audio output:
 ```
-01:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] (rev a1)<br>
+01:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] (rev a1)
 01:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller (rev a1)
 ```
 2. Make a note of IOMMU numbers and grouping, for example 01:00.0 and .1 in this case. Make sure they are grouped together and not split, such as 01:00.0 and 01:00.1 versus 01:00.0 and 03:00.2.
 
 3. Enter in the command `lspci -nk` and find the ID of your GPU and GPU audio:
 ```
-01:00.0 0300: 10de:13c2 (rev a1)<br>
-Subsystem: 1043:8508<br>
-Kernel driver in use: vfio-pci<br>
-Kernel modules: nouveau<br>
-01:00.1 0403: 10de:0fbb (rev a1)<br>
-Subsystem: 1043:8508<br>
-Kernel driver in use: vfio-pci<br>
+01:00.0 0300: 10de:13c2 (rev a1)
+Subsystem: 1043:8508
+Kernel driver in use: vfio-pci
+Kernel modules: nouveau
+01:00.1 0403: 10de:0fbb (rev a1)
+Subsystem: 1043:8508
+Kernel driver in use: vfio-pci
 Kernel modules: snd_hda_intel
 ```
 4. Note the ids: "10de:13c2" and "10de:0fbb".
