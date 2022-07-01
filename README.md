@@ -15,12 +15,12 @@ rw
 
 **Step Two: Locate GPU and GPU audio**
 
-1. Run command `lspci` whree you should see your GPU's video and audio output:
+1. Run command `lspci` where you should see your GPU's video and audio output:
 ```
 01:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] (rev a1)
 01:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller (rev a1)
 ```
-2. Make a note of IOMMU numbers and grouping, for example 01:00.0 and .1 in this case. Make sure they are grouped together and not split, such as 01:00.0 and 01:00.1 versus 01:00.0 and 03:00.2.
+2. Make a note of IOMMU numbers and grouping, for example 01:00.0 and 01:00.1 in this case. Make sure they are grouped together and not split, such as 01:00.0 and 01:00.1 versus 01:00.0 and 03:00.2.
 
 3. Enter in the command `lspci -nk` and find the ID of your GPU and GPU audio:
 ```
@@ -69,4 +69,3 @@ Video QXL
 Channel Splice
 Channel 1
 ```
-**Step Five: Setup Looking Glass Client.**
