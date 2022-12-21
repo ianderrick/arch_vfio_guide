@@ -34,7 +34,7 @@ Kernel driver in use: vfio-pci
 Kernel modules: snd_hda_intel
 ```
 4. Note the ids: "10de:13c2" and "10de:0fbb".
-5. Back at step one, there is `pci_stub.ids=10de:13c2,10de:0fbb`. Add this, and replace the ids with the ones you found above.
+5. As mentioned back at step one, add `pci_stub.ids=10de:13c2,10de:0fbb` to the /boot/loader/entries/arch.conf file.
 6. Reboot, run the command `lspci -nk` and look at the ids again. You should now see `pci-stub` after `kernel in use`.
 
 **Step Three: Install Virt-Manager**
@@ -61,7 +61,7 @@ Kernel modules: snd_hda_intel
 4. Click on `Add hardware` and add your GPU and GPU audio.
 5. Start the VM and install Windows. Setup as needed with your usual programs and GPU drivers.
 6. Once finished. shutdown the VM.
-7. In your VM's config, Remove the following:
+7. In your VM's config, remove the following:
 ```
 Display Vice
 USB Redirectors
